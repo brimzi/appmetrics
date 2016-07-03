@@ -1,0 +1,10 @@
+rootProject.name = 'appmetrics'
+include 'modules:appmetrics-lib'
+findProject(':modules:appmetrics-lib')?.name = 'appmetrics-lib'
+include 'modules:dropwizard-appmetrics-bundle'
+findProject(':modules:dropwizard-appmetrics-bundle')?.name = 'dropwizard-appmetrics-bundle'
+include 'modules:examples:lib-usage-example'
+findProject(':modules:examples:lib-usage-example')?.name = 'lib-usage-example'
+include 'modules:examples:dropwizard-usage-example'
+findProject(':modules:examples:dropwizard-usage-example')?.name = 'dropwizard-usage-example'
+

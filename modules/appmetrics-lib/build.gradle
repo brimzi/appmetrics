@@ -1,0 +1,17 @@
+group 'brimzi'
+version '1.0-SNAPSHOT'
+
+ext.metrics_version = '3.1.2'
+apply plugin: 'java'
+//apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "io.dropwizard.metrics:metrics-core:$metrics_version"
+    testCompile libs.junit
+}

@@ -1,0 +1,26 @@
+group 'brimzi'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+mainClassName ='Example'
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':modules:appmetrics-lib')
+    testCompile libs.junit
+}
+
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'Example'
+        )
+    }
+}
